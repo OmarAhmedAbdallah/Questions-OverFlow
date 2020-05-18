@@ -1,0 +1,32 @@
+﻿@using Microsoft.AspNetCore.Http
+<div id="header-top">
+    <section class="container clearfix">
+        <nav class="header-top-nav">
+            <ul>
+                <li><a href="contact_us.html"><i class="icon-envelope"></i>Contact</a></li>
+                <li><a href="#"><i class="icon-headphones"></i>Support</a></li>
+                @*<li><a href="login.html" id="login-panel">Login Area</a></li>*@
+                @{
+
+                    var userId = Context.Session.GetString("userId");
+                    if (@userId != null)
+                    {
+
+                        <li><a asp-area="" asp-controller="Userdetails" asp-action="index"><span class="glyphicon glyphicon-log-in"></span> My Profile</a></li>
+                        <li><a asp-area="" asp-controller="Account" asp-action="Logout"><span class="glyphicon glyphicon-log-in"></span>Logout</a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-area="" asp-controller="Account" asp-action="index"><i class="icon-user"></i> Login</a></li>
+                    }
+                }
+            </ul>
+        </nav>
+        <div class="header-search">
+            <form>
+                <input type="text" value="Search here ..." onfocus="if(this.value=='Search here ...')this.value='';" onblur="if(this.value=='')this.value='Search here ...';">
+                <button type="submit" class="search-submit"></button>
+            </form>
+        </div>
+    </section><!-- End container -->
+</div><!-- End header-top -->
