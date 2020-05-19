@@ -17,6 +17,7 @@ namespace App.Web.Data
         public DbSet<UserDetails> userdetails { get; set; }
         public DbSet<Subjects> subjects { get; set; }
         public DbSet<Article> articles { get; set; }
+        public DbSet<Post> posts { get; set; }
 
         //public DbSet<Subjects> Subjects { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)

@@ -27,7 +27,7 @@ namespace App.Services.Implementation
             //var userSubjects =  _context.Subjects.ToArray();
 
             var userdetails = await _context.userdetails
-                      .SingleOrDefaultAsync(m => m.Email == Email && m.Passowrd == password);
+                      .SingleOrDefaultAsync(m => m.Email == Email && m.Password == password);
             return userdetails;
         }
 
@@ -37,7 +37,7 @@ namespace App.Services.Implementation
             {
                 Name = name,
                 Email = email,
-                Passowrd = password,
+                Password = password,
                 Mobile = mobile
             };
             //var result = await userManager.CreateAsync(user, password);
